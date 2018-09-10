@@ -20,3 +20,11 @@ zuul:
     api-b:
       path: /api-b/**
       serviceId: service-feign
+      #指定路由的敏感头设置为空
+      sensitive-headers:
+      #指定路由开启自定义请求头
+      custom-sensitive-headers: true
+  ignored-patterns: /*/management/**, /*/ignored/**
+  ignored-services: config-service
+  #支持重定向 浏览器不暴露ip 显示服务名
+  add-host-header: true
